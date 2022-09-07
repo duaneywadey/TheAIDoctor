@@ -11,6 +11,10 @@
      <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
     <style>
           body {
       padding-top: 5rem;
@@ -88,7 +92,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mt-4">
-                      <label for="exampleFormControlSelect1">Sex</label>
+                      <label for="exampleFormControlSelect1">Sex (1 = male; 0 = female)</label>
                       <input type="text" class="form-control">
                     </div>                    
                   </div>
@@ -100,7 +104,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group mt-4">
-                      <label for="exampleFormControlSelect2">Chest pain type</label>
+                      <label for="exampleFormControlSelect2">Chest pain type <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a></label>
                       <input type="text" class="form-control">
                     </div>
                   </div>
@@ -112,7 +116,7 @@
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mt-4">
-                      <label for="exampleFormControlTextarea1">Cholesterol</label>
+                      <label for="exampleFormControlTextarea1">Cholesterol(serum cholesterol in mg/dl)</label>
                       <input type="text" class="form-control">
                     </div>
                   </div>
@@ -122,13 +126,13 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group mt-4">
-                    <label for="exampleFormControlTextarea1">Fasting blood sugar</label>
+                    <label for="exampleFormControlTextarea1">Fasting blood sugar (type 1 if greater than 120mg/dl</label>
                     <input type="text" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group mt-4">
-                    <label for="exampleFormControlTextarea1">Resting electrocardiographic results</label>
+                    <label for="exampleFormControlTextarea1">Resting electrocardiographic results<a href="" data-toggle="modal" data-target="#exampleModal2"> <i class="fa fa-info-circle" aria-hidden="true"></i></a></label>
                     <input type="text" class="form-control">
                   </div>
                 </div>
@@ -195,6 +199,56 @@
         </div>
       </div>
   </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Chest Pain Type</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Type <strong>0</strong> if Typical angina: chest pain related decrease blood supply to the heart</li>
+          <li>Type <strong>1</strong> if Atypical angina: chest pain not related to heart</li>
+          <li>Type <strong>2</strong> if Non-anginal pain: typically esophageal spasms (non heart related)</li>
+          <li>Type <strong>3</strong> if Asymptomatic: chest pain not showing signs of disease</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Resting electrocardiographic results</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Type <strong>0</strong> if there's nothing to note</li>
+          <li>Type <strong>1</strong> if it has ST-T Wave abnormality. It can range from mild symptoms to severe problems and signals non-normal heart beat</li>
+          <li>Type <strong>2</strong> for possible or definite left ventricular hypertrophy. Enlarged heart's main pumping chamber</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </main><!-- /.container -->
 
 
