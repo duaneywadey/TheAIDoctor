@@ -2,6 +2,9 @@
 
 AIDoctor is a machine learning web application that allows you to predict a range of diseases using various clinical parameters. As of now, it can predict Diabetes and heart diseases. 
 
+![image](https://user-images.githubusercontent.com/88537860/189066399-f92c094b-2023-4cdf-a9dd-f8cd8a15fdfd.png)
+
+
 # Instructions
 How to run this project? 
 
