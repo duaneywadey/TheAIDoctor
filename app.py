@@ -3,6 +3,7 @@ import joblib
 import numpy as np
 
 model = joblib.load('ml_model_diabetes')
+heartDiseaseModel = joblib.load('ml_model_heart_disease')
 
 app = Flask(__name__)
 
@@ -42,13 +43,40 @@ def showDiabetesResult():
 	return render_template('diabetesResult.html', data=result)
 
 
-
-
-
-
 @app.route("/heartdisease-detection")
 def heartDiseaseDetection():
 	return render_template('heart.html')
+
+@app.route("/heartdisease-detection/predictHeartDisease", methods=['POST', 'GET'])
+def showHeartDiseaseResult():
+	age = request.form['age']
+	sex = request.form['sex']
+	chestPainType = request.form['chestPainType']
+	restingBloodPressure = request.form['restingBloodPressure']
+	cholesterol = request.form['cholesterol']
+	fastingBloodSugar = request.form['fastingBloodSugar']
+	restingElectroResult = request.form['restingElectroResult']
+	maxHeartRate = request.form['maxHeartRate']
+	exInducedAngina = request.form['exInducedAngina']
+	oldPeakDep = request.form['oldPeakDep']
+	slope = request.form['slope']
+	ca = request.form['ca']
+	thaliumStress = request.form['thaliumStress']
+
+	heartArr = np.array([[age, sex, chestPainType, restingBloodPressure, cholesterol, 
+		fastingBloodSugar, restingElectroResult, maxHeartRate, exInducedAngina, 
+		oldPeakDep, slope,ca, thaliumStress]], dtype=float)
+
+	heartPred = heartDiseaseModel.predict(heartArr)
+
+	if heartPred[0] == 0:
+		result = "STATUS: SAFE"
+
+	else:
+		result = "STATUS: HAS A HEART DISEASE"
+
+
+	return render_template('heartResult.html', data=result)
 
 
 if __name__ == "__main__":

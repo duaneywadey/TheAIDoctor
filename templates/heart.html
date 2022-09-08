@@ -80,20 +80,21 @@
         <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="overflow-y: scroll; height: 100vh; ">
           <div class="card-body">
             <h3 class="card-title">Heart Disease Prediction</h3>
-            <h6 class="card-subtitle mb-2 text-muted">Please fill in the following form below.</h6>
-              <form>
+            <h6 class="card-subtitle mb-2 text-muted">Please fill in the following form below. You may press <i>Enter</i> to proceed to the next input field</h6>
+
+              <form action="{{url_for('showHeartDiseaseResult')}}" method="POST">
 
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group mt-4">
                       <label for="exampleFormControlInput1">Age in years</label>
-                      <input type="text" class="form-control">
+                      <input type="text" name="age" class="form-control" tabindex="1">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group mt-4">
                       <label for="exampleFormControlSelect1">Sex (1 = male; 0 = female)</label>
-                      <input type="text" class="form-control">
+                      <input type="text" name="sex" class="form-control" tabindex="2">
                     </div>                    
                   </div>
                 </div>
@@ -105,19 +106,19 @@
                   <div class="col-md-4">
                     <div class="form-group mt-4">
                       <label for="exampleFormControlSelect2">Chest pain type <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a></label>
-                      <input type="text" class="form-control">
+                      <input type="text" name="chestPainType" class="form-control" tabindex="3">
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mt-4">
-                      <label for="exampleFormControlTextarea1">Resting blood pressure</label>
-                      <input type="text" class="form-control">
+                      <label for="exampleFormControlTextarea1">Resting blood pressure (Systolic)</label>
+                      <input type="text" name="restingBloodPressure" class="form-control" tabindex="4">
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mt-4">
                       <label for="exampleFormControlTextarea1">Cholesterol(serum cholesterol in mg/dl)</label>
-                      <input type="text" class="form-control">
+                      <input type="text" name="cholesterol" class="form-control" tabindex="5">
                     </div>
                   </div>
                 </div>
@@ -127,19 +128,19 @@
                 <div class="col-md-4">
                   <div class="form-group mt-4">
                     <label for="exampleFormControlTextarea1">Fasting blood sugar (type 1 if greater than 120mg/dl</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="fastingBloodSugar" class="form-control" tabindex="6">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group mt-4">
-                    <label for="exampleFormControlTextarea1">Resting electrocardiographic results<a href="" data-toggle="modal" data-target="#exampleModal2"> <i class="fa fa-info-circle" aria-hidden="true"></i></a></label>
-                    <input type="text" class="form-control">
+                    <label for="exampleFormControlTextarea1">Resting electrocardiographic results <a href="" data-toggle="modal" data-target="#exampleModal2"> <i class="fa fa-info-circle" aria-hidden="true"></i></a></label>
+                    <input type="text" name="restingElectroResult" class="form-control" tabindex="7">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group mt-4">
                     <label for="exampleFormControlTextarea1">Maximum heart rate achieved</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="maxHeartRate" class="form-control" tabindex="8">
                   </div>   
                 </div>
               </div>
@@ -148,13 +149,13 @@
                 <div class="col-md-6">
                   <div class="form-group mt-4">
                     <label for="exampleFormControlTextarea1">Exercise induced angina (1 = yes; 0 = no)</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="exInducedAngina" class="form-control" tabindex="9">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group mt-4">
                     <label for="exampleFormControlTextarea1">Oldpeak (ST Depression)</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="oldPeakDep" class="form-control" tabindex="10">
                   </div>
                 </div>
               </div>  
@@ -163,19 +164,19 @@
                 <div class="col-md-4">
                   <div class="form-group mt-4">
                     <label for="exampleFormControlTextarea1">Slope (the slope of the peak exercise ST segment) <a href="" data-toggle="modal" data-target="#exampleModal3"><i class="fa fa-info-circle" aria-hidden="true"></i></a></label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="slope" class="form-control" tabindex="11">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group mt-4">
                     <label for="exampleFormControlTextarea1">Ca (number of major vessels (0-3) colored by flourosopy)</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="ca" class="form-control" tabindex="12">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group mt-4">
-                    <label for="exampleFormControlTextarea1">Thalium stress result<a href="" data-toggle="modal" data-target="#exampleModal4"><i class="fa fa-info-circle" aria-hidden="true"></i></a></label>
-                    <input type="text" class="form-control">
+                    <label for="exampleFormControlTextarea1">Thalium stress result <a href="" data-toggle="modal" data-target="#exampleModal4"><i class="fa fa-info-circle" aria-hidden="true"></i></a></label>
+                    <input type="text" name="thaliumStress" class="form-control" tabindex="13">
                   </div>
                 </div>
               </div>
@@ -306,6 +307,21 @@
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>  
+    $(document).on('keypress', 'input,select', function (e) {
+      if (e.which == 13) {
+        e.preventDefault();
+        var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
+        console.log($next.length);
+        if (!$next.length) {
+          $next = $('[tabIndex=1]');
+        }
+        $next.focus();
+        }
+    });
+
+    </script> 
       
   </body>
 </html>
