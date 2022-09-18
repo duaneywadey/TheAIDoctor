@@ -9,6 +9,10 @@ AIDoctor is a machine learning web application that allows you to predict a rang
 * Heart Disease Dataset and ML model link
 	- https://github.com/duaneywadey/Heart-Disease-Detection-Model
 
+* Dataset links
+	- https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
+	- https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
+
 ![image](https://user-images.githubusercontent.com/88537860/189066399-f92c094b-2023-4cdf-a9dd-f8cd8a15fdfd.png)
 
 
