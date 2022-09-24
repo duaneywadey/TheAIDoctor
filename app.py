@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
+from sklearn.preprocessing import StandardScaler
 import joblib
 import numpy as np
 
-model = joblib.load('ml_model_diabetes')
+model = joblib.load('new_ml_model_diabetes')
 heartDiseaseModel = joblib.load('ml_model_heart_disease')
 
 app = Flask(__name__)
@@ -22,6 +23,8 @@ def diabetesDetection():
 
 @app.route("/diabetesdetection/predictdiabetes", methods=['POST', 'GET'])
 def showDiabetesResult():
+	scaler = StandardScaler()
+
 	numOfPreg = request.form['a']
 	glucose = request.form['b']
 	bloodPressure = request.form['c']
@@ -34,11 +37,12 @@ def showDiabetesResult():
 	arr = np.array([[numOfPreg, glucose, bloodPressure, skinThickness, insulin, bmi, diabPedigFunc, age]], dtype=float)
 	pred = model.predict(arr)
 
-	if pred[0] == 0:
-		result = "STATUS: SAFE"
+
+	if pred[0] == 1:
+		result = "HAS DIABETES"
 
 	else:
-		result = "STATUS: HAS DIABETES"
+		result = "SAFE"
 	
 	return render_template('diabetesResult.html', data=result)
 
@@ -70,10 +74,10 @@ def showHeartDiseaseResult():
 	heartPred = heartDiseaseModel.predict(heartArr)
 
 	if heartPred[0] == 0:
-		result = "STATUS: SAFE"
+		result = "SAFE"
 
 	else:
-		result = "STATUS: HAS A HEART DISEASE"
+		result = "HAS A HEART DISEASE"
 
 
 	return render_template('heartResult.html', data=result)
