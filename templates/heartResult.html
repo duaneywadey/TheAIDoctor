@@ -79,10 +79,20 @@
 	    <div class="col-md-8 mt-4">
 	        <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="height: 40vh; ">
 		         <div class="card-body">
-		            <h3 class="card-title text-center">STATUS:</h3>
-		            <h3 class="text-danger text-center">{{data}}</h3>
+
+                {% if data == "HAS A HEART DISEASE" %}
+                <img src="https://www.svgrepo.com/show/16084/doctor.svg" width="60" height="60" class="d-block mx-auto" alt="">
+		            <h3 class="card-title text-center text-danger mt-4">STATUS: {{data}}</h3>
 		            <p class="text-center mt-4">Please click this <a href="https://www.mayoclinic.org/diseases-conditions/heart-disease/in-depth/heart-healthy-diet/art-20047702">link </a>to know more practices in keeping your heart healthy. Never forget to stay healthy always!</p>
 		            <a href="javascript:window.history.back();"><p class="text-center mt-4">Back</p></a>
+                {% else %}
+                <img src="https://www.svgrepo.com/show/16084/doctor.svg" width="60" height="60" class="d-block mx-auto" alt="">
+                <h3 class="card-title text-center text-primary mt-4">STATUS: {{data}}</h3>
+                <p class="text-center mt-4">Please click this <a href="https://www.mayoclinic.org/diseases-conditions/heart-disease/in-depth/heart-healthy-diet/art-20047702">link </a>to know more practices in keeping your heart healthy. Never forget to stay healthy always!</p>
+                <a href="javascript:window.history.back();"><p class="text-center mt-4">Back</p></a>
+                {% endif %}
+
+
 		        </div>
 	    	</div>
 		</div>

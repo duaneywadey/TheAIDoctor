@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 import numpy as np
 
-model = joblib.load('new_ml_model_diabetes')
+model = joblib.load('ml_model_diabetes')
 heartDiseaseModel = joblib.load('ml_model_heart_disease')
 
 app = Flask(__name__)
@@ -73,11 +73,11 @@ def showHeartDiseaseResult():
 
 	heartPred = heartDiseaseModel.predict(heartArr)
 
-	if heartPred[0] == 0:
-		result = "SAFE"
+	if heartPred[0] == 1:
+		result = "HAS A HEART DISEASE"
 
 	else:
-		result = "HAS A HEART DISEASE"
+		result = "SAFE"
 
 
 	return render_template('heartResult.html', data=result)
